@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+<main class="home-page" style="margin-bottom: 200px;">
+
+  <form style="color: black;" method="post" action="/submit">
+    <h1>Create A Bl0g</h1>
+    <input name="title" type="text" class="feedback-input" placeholder="Bl0g Title" />
+    <input name="name" type="text" class="feedback-input" placeholder="Author" />
+    <input name="email" type="text" class="feedback-input" placeholder="Email" />
+    <textarea  name="introduction" class="feedback-input" placeholder="Introduction...."></textarea>
+    <textarea  name="body" class="feedback-input" placeholder="What Happened?!?!."></textarea>
+    <textarea  name="conclusion" class="feedback-input" placeholder="What Now....?"></textarea>
+    <input type="submit" value="SUBMIT" />
+  </form>
+
+  <div class="blog-posts">
+    <ul> <% blogPosts.forEach(function(post) { %> <li> <a href="/blog/<%= post.id %>"><%= post.title %></a> </li> <% }); %> </ul>
+  </div>
+
+
+</main>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+<main style="margin-bottom: 200px;">
+
+
+    <form style="color: black;" method="post" action="/edit/<%= blogPost.id %>">
+        <h1>Edit A Bl0g</h1>
+        <input name="title" type="text" class="feedback-input" placeholder="Bl0g Title" value="<%= blogPost.title %>" />
+        <input name="name" type="text" class="feedback-input" placeholder="Author"  value="<%= blogPost.name %>"/>
+        <input name="email" type="text" class="feedback-input" placeholder="Email"  value="<%= blogPost.email %>"/>
+        <textarea  name="introduction" class="feedback-input" placeholder="Introduction...."><%=blogPost.introduction%></textarea>
+        <textarea  name="body" class="feedback-input" placeholder="What Happened?!?!."><%=blogPost.body%></textarea>
+        <textarea  name="conclusion" class="feedback-input" placeholder="What Now....?" ><%=blogPost.conclusion%></textarea>
+        <input type="submit" value="SUBMIT" />
+      </form>
+</main>
+<%- include("partials/footer.ejs") %>

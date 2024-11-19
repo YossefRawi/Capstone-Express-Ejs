@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs") %>
+<div class="blog-control">
+
+
+
+<main style="margin-bottom: 200px;">
+ 
+  <img class="profile" src="images/cat.jpeg" alt="cat profile">
+  <section class="about">
+    <h1><%= blogPost.title || "Blog Title"%> </h1>
+    <h6><%= blogPost.name || "Author's Name"%> </h6>
+    <h6><%= blogPost.email || "Author's email"%> </h6>
+    <h6>Published On: <%= today %>  </h6>
+  </section>
+  <hr>
+  <section style="text-align: start" class="introduction">
+    <h3 >Introduction</h3>
+    <p><%= blogPost.introduction || "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia alias mollitia atque praesentium ut velit quisquam necessitatibus veritatis ullam! Nemo cupiditate asperiores consequuntur quae temporibus alias, pariatur perspiciatis similique iure."%> </p>
+  </section>
+<hr>
+  <section style="text-align: start" class="what-happened">
+    <h3 >What Happened</h3>
+    <p><%= blogPost.body || "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia alias mollitia atque praesentium ut velit quisquam necessitatibus veritatis ullam! Nemo cupiditate asperiores consequuntur quae temporibus alias, pariatur perspiciatis similique iure."%></p>
+  </section>
+<hr>
+  <section style="text-align: start" class="now-what">
+    <h3 >Now What</h3>
+    <p><%= blogPost.conclusion || "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia alias mollitia atque praesentium ut velit quisquam necessitatibus veritatis ullam! Nemo cupiditate asperiores consequuntur quae temporibus alias, pariatur perspiciatis similique iure."%> </p>
+  </section>
+
+  
+  </main>
+
+  <div class="edit-post">
+
+    <form action="/delete/<%= blogPost.id %>" method="POST" style="display: inline;"> 
+      <button  type="submit" class="form-control bg-danger text-light">DELETE</button>
+    </form>    
+    <br>
+    <a style="font-size: 1.5rem !important; font-weight: bold;" class="form-control bg-warning text-center text-light " href="/edit/<%= blogPost.id %>">EDIT</a>
+  </div>
+
+</div>
+
+
+    <%- include("partials/footer.ejs") %>
